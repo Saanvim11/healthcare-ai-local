@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+venv/
+.venv/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Ollama
+ollama/
+
+# Chroma / SQLite
+chroma_db/
+*.sqlite3
+
+# Vector DB
+data/vector_db/
+
+# FAISS indexes
+*.faiss
+*.pkl
