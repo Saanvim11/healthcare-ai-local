@@ -42,17 +42,34 @@ A **privacy-first, locally hosted** AI-powered clinical decision support system 
 
 ## 📁 Project Structure
 
+```bash
 healthcare-ai-local/
-├── backend/                  # FastAPI backend
+├── backend/                     # FastAPI backend
 │   ├── app/
-│   │   ├── api/              # Endpoints
-│   │   ├── models/           # Database models
-│   │   ├── services/         # Core logic
+│   │   ├── api/                 # API endpoints
+│   │   ├── agents/              # Agent orchestration
+│   │   ├── core/                # Configuration & security
+│   │   ├── db/                  # Database connection
+│   │   ├── models/              # Database models
+│   │   ├── rag/                 # Retrieval pipeline
+│   │   ├── schemas/             # Pydantic schemas
+│   │   ├── services/            # Business logic
 │   │   └── ...
-├── knowledge_base/           # Medical PDFs
-├── streamlit_app.py          # Frontend
-├──env                      # Configuration
+│   ├── ingest.py
+│   └── main.py
+│
+├── data/
+│   └── knowledge_base/          # Medical PDFs
+│
+├── frontend/
+│   └── app.py
+│
+├── streamlit_app.py             # Streamlit frontend
+├── clinical.db                  # SQLite database
+├── requirements.txt
+├── .env                         # Environment variables
 └── README.md
+```
 
 
 ---
