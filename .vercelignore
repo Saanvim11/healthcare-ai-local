@@ -3,3 +3,5 @@ data/
 *.faiss
 *.pkl
 __pycache__/
+.env
+*.log

@@ -36,3 +36,5 @@ data/vector_db/
 "index.pkl" 
 "__pycache__/" 
 ".env" 
+.vercel
+.env*
