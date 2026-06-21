@@ -27,4 +27,6 @@ data/vector_db/
 
 # FAISS indexes
 *.faiss
-*.pkl
+*.pkl"data/vector_db/" 
+"*.sqlite3" 
+"data/vector_db/chroma.sqlite3" 
