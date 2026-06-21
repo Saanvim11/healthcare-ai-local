@@ -7,15 +7,16 @@ passlib[bcrypt]==1.7.4
 python-jose[cryptography]==3.3.0
 python-multipart==0.0.9
 
-# Minimal AI Stack
+# AI & RAG
 langchain==0.3.0
 langchain-community==0.3.0
 langchain-ollama==0.2.0
 pypdf==5.0.0
 tqdm==4.66.5
+transformers==4.45.0     # ← Added this
 
-# Light embedding (no heavy torch)
-huggingface-hub==0.25.0
-
+# Frontend
 streamlit==1.38.0
+
+# Utilities
 requests==2.32.3
