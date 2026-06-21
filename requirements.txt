@@ -7,18 +7,15 @@ passlib[bcrypt]==1.7.4
 python-jose[cryptography]==3.3.0
 python-multipart==0.0.9
 
-# Light AI Stack
+# Minimal AI stack for Vercel
 langchain==0.3.0
 langchain-community==0.3.0
 langchain-ollama==0.2.0
 pypdf==5.0.0
 tqdm==4.66.5
 
-# Very Light Embedding Model
+# Very light embedding (avoid heavy torch if possible)
 sentence-transformers==3.1.1
 
-# Frontend
 streamlit==1.38.0
-
-# Utils
 requests==2.32.3
