@@ -8,36 +8,36 @@ import os
 class MedicalRetriever:
     def __init__(self):
         self.config = RAGConfig()
-        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         self.vector_db = None
         self.index_path = os.path.join(self.config.vector_db_path, "faiss_index")
 
     def ingest_documents(self):
         if not os.path.exists(self.config.knowledge_base_path):
             os.makedirs(self.config.knowledge_base_path)
-            print(f"📁 Created folder: {self.config.knowledge_base_path}")
+            print(f" Created folder: {self.config.knowledge_base_path}")
             print("Please add medical PDFs inside this folder.")
             return False
 
-        print("📄 Loading documents...")
+        print(" Loading documents...")
         loader = PyPDFDirectoryLoader(self.config.knowledge_base_path)
         documents = loader.load()
 
-        print("📝 Splitting documents...")
+        print(" Splitting documents...")
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=700,
             chunk_overlap=100
         )
         chunks = text_splitter.split_documents(documents)
 
-        print(f"🔄 Creating FAISS index with {len(chunks)} chunks...")
+        print(f" Creating FAISS index with {len(chunks)} chunks...")
         self.vector_db = FAISS.from_documents(chunks, self.embeddings)
         
         # Save index
         os.makedirs(self.config.vector_db_path, exist_ok=True)
         self.vector_db.save_local(self.index_path)
         
-        print(f"✅ Successfully ingested {len(chunks)} chunks using FAISS!")
+        print(f" Successfully ingested {len(chunks)} chunks using FAISS!")
         return True
 
     def retrieve(self, query: str, k: int = 5):
